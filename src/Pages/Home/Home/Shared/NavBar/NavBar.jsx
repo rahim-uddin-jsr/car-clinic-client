@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../../../providers/AuthProvider/AuthProvider";
 import logo from "/logo.svg";
 const NavBar = () => {
+  const { user } = useContext(AuthContext);
   const navItem = (
     <>
       <li>
@@ -54,6 +57,7 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItem}</ul>
       </div>
+      {user && <h2>{user?.email}</h2>}
       <div className="navbar-end">
         <a className="btn">Get started</a>
       </div>
