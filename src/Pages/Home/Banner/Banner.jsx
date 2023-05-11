@@ -10,7 +10,7 @@ const Banner = () => {
       <div id="slide1" className="carousel-item relative w-full">
         <img src={bannerImg1} className="w-full" />
 
-        <div className="absolute flex flex-col justify-center h-full pl-10 text-white bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
+        <div className="absolute flex flex-col justify-center h-full pl-10 text-white w-full bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
           <div className="space-y-7 w-2/5">
             <h2 className="text-6xl font-semibold">
               Affordable Price For Car Servicing
@@ -40,7 +40,7 @@ const Banner = () => {
       </div>
       <div id="slide2" className="carousel-item relative w-full">
         <img src={bannerImg2} className="w-full" />
-        <div className="absolute flex flex-col justify-center h-full pl-10 text-white bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
+        <div className="absolute flex flex-col justify-center h-full pl-10 text-white w-full bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
           <div className="space-y-7 w-2/5">
             <h2 className="text-6xl font-semibold">
               Affordable Price For Car Servicing
@@ -70,7 +70,7 @@ const Banner = () => {
       </div>
       <div id="slide3" className="carousel-item relative w-full">
         <img src={bannerImg3} className="w-full" />
-        <div className="absolute flex flex-col justify-center h-full pl-10 text-white bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
+        <div className="absolute flex flex-col justify-center h-full pl-10 text-white w-full bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
           <div className="space-y-7 w-2/5">
             <h2 className="text-6xl font-semibold">
               Affordable Price For Car Servicing
@@ -100,7 +100,7 @@ const Banner = () => {
       </div>
       <div id="slide4" className="carousel-item relative w-full">
         <img src={bannerImg4} className="w-full" />
-        <div className="absolute flex flex-col justify-center h-full pl-10 text-white bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
+        <div className="absolute flex flex-col justify-center h-full pl-10 text-white w-full bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
           <div className="space-y-7 w-2/5">
             <h2 className="text-6xl font-semibold">
               Affordable Price For Car Servicing
@@ -130,7 +130,7 @@ const Banner = () => {
       </div>
       <div id="slide5" className="carousel-item relative w-full">
         <img src={bannerImg5} className="w-full" />
-        <div className="absolute flex flex-col justify-center h-full pl-10 text-white bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
+        <div className="absolute flex flex-col justify-center h-full pl-10 text-white w-full bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
           <div className="space-y-7 w-2/5">
             <h2 className="text-6xl font-semibold">
               Affordable Price For Car Servicing
@@ -160,7 +160,7 @@ const Banner = () => {
       </div>
       <div id="slide6" className="carousel-item relative w-full">
         <img src={bannerImg6} className="w-full" />
-        <div className="absolute flex flex-col justify-center h-full pl-10 text-white bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
+        <div className="absolute flex flex-col justify-center h-full pl-10 text-white w-full bg-gradient-to-r from-[#151515] to-[21, 21, 21, 0]">
           <div className="space-y-7 w-2/5">
             <h2 className="text-6xl font-semibold">
               Affordable Price For Car Servicing

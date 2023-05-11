@@ -48,7 +48,7 @@ const NavBar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navItem}
-          </ul>
+          </ul> 
         </div>
         <Link to="/" className="">
           <img src={logo} alt="" />
