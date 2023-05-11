@@ -12,9 +12,14 @@ const Service = ({ service }) => {
         <h2 className="card-title text-3xl">{name}</h2>
         <div className="card-actions justify-between items-center">
           <p className="text-primary text-xl font-medium">Price: ${price}</p>
-          <Link to={`services/${_id}`}>
+          {/* <Link to={`services/${_id}`}>
             <button className="btn btn-ghost text-xl font-bold">
-              <FaArrowRight />
+              Buy Now <FaArrowRight />
+            </button>
+          </Link> */}
+          <Link to={`checkout/${_id}`}>
+            <button className="btn btn-ghost text-xl font-bold">
+              Buy Now <FaArrowRight />
             </button>
           </Link>
         </div>
