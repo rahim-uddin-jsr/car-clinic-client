@@ -2,8 +2,18 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../../../providers/AuthProvider/AuthProvider";
 import logo from "/logo.svg";
+
 const NavBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        alert("Sign Out success");
+      })
+      .then((e) => {
+        alert(e.massage);
+      });
+  };
   const navItem = (
     <>
       <li>
@@ -48,7 +58,7 @@ const NavBar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navItem}
-          </ul> 
+          </ul>
         </div>
         <Link to="/" className="">
           <img src={logo} alt="" />
@@ -59,7 +69,21 @@ const NavBar = () => {
       </div>
       {user && <h2>{user?.email}</h2>}
       <div className="navbar-end">
-        <a className="btn">Get started</a>
+        {user?.email ? (
+          <a onClick={handleSignOut} className="btn">
+            Sign Out
+          </a>
+        ) : (
+          <Link to="/login" className="btn">
+            Login
+          </Link>
+        )}
+        <Link
+          to={`/bookings`}
+          className="btn btn-outline btn-ghost btn-primary ml-5"
+        >
+          Appointment
+        </Link>
       </div>
     </div>
   );

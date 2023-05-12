@@ -15,7 +15,7 @@ const CheckOut = () => {
     const requirement = form.requirement.value;
     const amount = form.amount.value;
     const date = form.date.value;
-    const checkoutInfo = { name, email, date, requirement, amount };
+    const checkoutInfo = { name, email, date, requirement, amount, service };
     fetch("http://localhost:5000/bookings", {
       method: "POST",
       headers: {
