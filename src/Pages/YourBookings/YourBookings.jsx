@@ -6,12 +6,11 @@ import BookingsRow from "./BookingsRow";
 const YourBookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  console.log(user);
   useEffect(() => {
     fetch(`http://localhost:5000/bookings?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setBookings(data));
-  }, []);
+  }, [user.email]);
 
   const handleDelete = (id) => {
     console.log(id);
@@ -25,8 +24,27 @@ const YourBookings = () => {
         }
       });
     const remaining = bookings.filter((service) => service._id !== id);
-    setBookings(remaining)
+    setBookings(remaining);
   };
+  const handleStatus = (id) => {
+    fetch(`http://localhost:5000/bookings/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "confirmed" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount === 1) {
+          const remaining = bookings.filter((service) => service._id !== id);
+          const modified = bookings.find((service) => service._id === id);
+          modified.status = "confirmed";
+          setBookings([modified, ...remaining]);
+        }
+      });
+  };
+  console.log(bookings);
   return (
     <>
       <Banner>All Your Bookings</Banner>
@@ -54,6 +72,7 @@ const YourBookings = () => {
                 key={service._id}
                 service={service}
                 handleDelete={handleDelete}
+                handleStatus={handleStatus}
               />
             ))}
           </tbody>
