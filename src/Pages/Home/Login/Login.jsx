@@ -1,8 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import secure from "../../../assets/images/login/login.svg";
 import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state.from.pathname || "/";
   const { loginWithEmail } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,6 +17,7 @@ const Login = () => {
         alert("Signed in");
         const user = userCredential.user;
         console.log(user);
+        navigate(from);
       })
       .catch((error) => {
         // const errorCode = error.code;
